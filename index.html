@@ -1,15 +1,60 @@
-<html>
-	<head>
-		<link rel="stylesheet" href="assets/stylesheets/app.css">
-	</head>
-	<body>
-		<header class="flex">
-			<h1>🌸 babygirl of the day 🌸</h1>
-			<button>✨ wish ✨</button>
-		</header>
-		<section class="flex">
-			<img src="">
-		</section>
-		<script src="assets/scripts/app.js"></script>
-	</body>
-</html>
+<div class="codepen" data-height="500" style=width: 40% data-theme-id="dark" data-default-tab="result" data-slug-hash="RQEOWm" data-editable="true" data-user="jsd041313"  data-prefill='{"title":"Random Picture Generator","tags":[],"scripts":[],"stylesheets":[]}'>
+  <pre data-lang="html">&lt;html>
+	&lt;head>
+		&lt;title>Random Picture Generator&lt;/title>
+		&lt;link rel="stylesheet" href="assets/stylesheets/app.css">
+	&lt;/head>
+	&lt;body>
+		&lt;header class="flex">
+			&lt;h1>🌸 babygirl of the day 🌸&lt;/h1>
+			&lt;button>✨ wish ✨&lt;/button>
+		&lt;/header>
+		&lt;section class="flex">
+			&lt;img src="">
+		&lt;/section>
+		&lt;script src="assets/scripts/app.js">&lt;/script>
+	&lt;/body>
+&lt;/html></pre>
+  <pre data-lang="css">html, body {
+	background-color: #F3B0C6;
+        margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+header {
+	width: 100%;
+        font-size: 11px;
+	padding-bottom: 25px;
+	flex-direction: column;
+}
+
+img {
+	width: 80%;
+}
+
+.flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}</pre>
+  <pre data-lang="js">const imageArray = [	    "https://pbs.twimg.com/media/Fa49WCHWIAAHQC5?format=jpg&name=large",	  "https://pbs.twimg.com/media/F98yeCRXwAAsrXl?format=jpg&name=large",
+"https://pbs.twimg.com/media/FCdkpvDUYAMDwEm?format=jpg&name=large",
+"https://pbs.twimg.com/media/F_2LGljbwAAT9G2?format=jpg&name=large",
+"https://pbs.twimg.com/media/F85Z1bObYAAljUg?format=jpg&name=large",
+"https://pbs.twimg.com/media/F5J0ggBbYAAf1qJ?format=jpg&name=large",
+"https://pbs.twimg.com/media/FQjcOQlaIAIYsi_?format=jpg&name=large"
+];
+
+const image = document.querySelector("img");
+const button = document.querySelector("button");
+
+window.onload = () => generateRandomPicture(imageArray);
+
+button.addEventListener("click", () => generateRandomPicture(imageArray));
+
+function generateRandomPicture(array){
+	let randomNum = Math.floor(Math.random() * array.length); 
+	image.setAttribute("src", array[randomNum]);
+}</pre></div>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
